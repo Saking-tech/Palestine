@@ -15,7 +15,7 @@ const BlogDisplay = () => {
     fontSize: '16px'
   });
 
-  const handleFormatChange = (property, value) => {
+  const handleFormatChange = (property: string, value: string) => {
     setTextStyle(prevStyle => ({ ...prevStyle, [property]: value }));
   };
 

@@ -4,6 +4,7 @@ import { FaBold, FaItalic, FaUnderline, FaStrikethrough, FaPlus, FaMinus } from 
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { SketchPicker } from 'react-color';
 
+
 const BlogTypingSection = () => {
   const [text, setText] = useState('');
   const [selectedText, setSelectedText] = useState('');
@@ -16,18 +17,18 @@ const BlogTypingSection = () => {
   const [isStrikethrough, setIsStrikethrough] = useState(false);
   const [showColorPicker, setShowColorPicker] = useState(false);
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
   const handleTextSelect = () => {
     const selection = window.getSelection();
-    setSelectedText(selection.toString());
+    setSelectedText(selection ? selection.toString() : '');
   };
 
-  const applyFormatting = (format) => {
-    const textarea = document.getElementById('blog-textarea');
-    const start = textarea.selectionStart;
+  const applyFormatting = (format: string) => {
+    const textarea = document.getElementById('blog-textarea') as HTMLTextAreaElement;
+    const start = textarea?.selectionStart ?? 0;
     const end = textarea.selectionEnd;
     const selectedText = text.substring(start, end);
     let formattedText = '';
@@ -65,11 +66,11 @@ const BlogTypingSection = () => {
     setFontSize(prevSize => prevSize - 1);
   };
 
-  const handleFontFamilyChange = (e) => {
+  const handleFontFamilyChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setFontFamily(e.target.value);
   };
 
-  const handleColorChange = (color) => {
+  const handleColorChange = (color: any) => {
     setTextColor(color.hex);
   };
 
