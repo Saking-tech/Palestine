@@ -28,7 +28,7 @@ const Footer = () => {
               </span>
             </h3>
             <p className="text-lg font-semibold italic">
-              "Unity in Diversity, Strength in Resilience"
+              Unity in Diversity, Strength in Resilience
             </p>
           </div>
           <div className="w-full md:w-1/3 text-right">

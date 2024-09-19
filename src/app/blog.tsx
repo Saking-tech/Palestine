@@ -17,6 +17,8 @@ const BlogTypingSection = () => {
   const [isStrikethrough, setIsStrikethrough] = useState(false);
   const [showColorPicker, setShowColorPicker] = useState(false);
 
+  const nes = selectedText;
+
   const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
@@ -53,7 +55,7 @@ const BlogTypingSection = () => {
       default:
         break;
     }
-
+    
     const newText = text.substring(0, start) + formattedText + text.substring(end);
     setText(newText);
   };
@@ -70,8 +72,9 @@ const BlogTypingSection = () => {
     setFontFamily(e.target.value);
   };
 
-  const handleColorChange = (color: any) => {
+  const handleColorChange = (color: { hex: string }): void => {
     setTextColor(color.hex);
+    console.log(nes);
   };
 
   return (
