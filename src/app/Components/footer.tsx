@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-green-600 via-white to-red-600 text-black py-8">
+    <footer className="bg-gradient-to-r from-green-600 via-white to-grey-600 text-black py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center">
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center">
             <h3 className="text-3xl font-bold mb-4 text-black">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-black-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-red-600">
                 Free Palestine
               </span>
             </h3>
