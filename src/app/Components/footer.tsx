@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
           <div className="w-full md:w-1/3 mb-6 md:mb-0 text-center">
             <h3 className="text-3xl font-bold mb-4 text-black">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-red-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-black-600">
                 Free Palestine
               </span>
             </h3>
