@@ -1,91 +1,79 @@
 "use client"
-import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaFlagCheckered } from 'react-icons/fa';
+import React, { useState, useEffect } from "react";
+import { FaHome, FaInfo, FaNewspaper, FaHandHoldingHeart, FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
     };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Blogs', href: '#blogs' },
-  ];
-
   return (
-    <main>
-      <nav className="bg-gradient-to-r from-green-600 via-white to-grey-600 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <FaFlagCheckered className="h-8 w-8 text-black" aria-label="Palestine Flag" />
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-black hover:bg-black hover:text-white px-3 py-2 rounded-md text-sm font-medium transition duration-300 ease-in-out font-bold"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div className="-mr-2 flex md:hidden">
-              <button
-                onClick={toggleMenu}
-                type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                {isMenuOpen ? (
-                  <FaTimes className="block h-6 w-6" aria-hidden="true" />
-                ) : (
-                  <FaBars className="block h-6 w-6" aria-hidden="true" />
-                )}
-              </button>
-            </div>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+            <svg
+              className="w-8 h-8 text-white"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 via-white to-red-600 text-transparent bg-clip-text">
+            Palestine Unidos
+          </h1>
         </div>
-
-        {isMobile && (
-          <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`} id="mobile-menu">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-black hover:bg-black hover:text-white block px-3 py-2 rounded-md text-base font-medium transition duration-300 ease-in-out font-bold"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
+        <nav className="hidden md:flex space-x-6">
+          <NavItem icon={<FaHome />} text="Home" />
+          <NavItem icon={<FaInfo />} text="About" />
+          <NavItem icon={<FaNewspaper />} text="News" />
+          <NavItem icon={<FaHandHoldingHeart />} text="Support" />
+        </nav>
+        <div className="flex items-center space-x-4">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="bg-gray-100 rounded-full py-2 px-4 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+            <FaSearch className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           </div>
-        )}
-      </nav>
-    </main>
+          <button className="bg-red-600 text-white rounded-full py-2 px-6 hover:bg-red-700 transition duration-300 ease-in-out transform hover:scale-105">
+            Donate
+          </button>
+        </div>
+      </div>
+      <div className="h-1 bg-gradient-to-r from-green-500 via-white to-red-500"></div>
+    </header>
   );
 };
+
+const NavItem = ({ icon, text }) => (
+  <a
+    href="#"
+    className="flex items-center space-x-1 text-gray-700 hover:text-green-600 transition duration-300 ease-in-out transform hover:scale-110"
+  >
+    {icon}
+    <span>{text}</span>
+  </a>
+);
 
 export default Navbar;
