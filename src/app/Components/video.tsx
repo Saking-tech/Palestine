@@ -12,14 +12,14 @@ const LiberationVideo = () => {
       title: "The Path to Freedom",
       date: "2023-06-15",
       source: "Liberation News",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      url: "https://www.youtube.com/embed/eJWyzfJafmI" 
     },
     {
       id: 2,
       title: "Breaking Chains",
       date: "2023-06-10",
       source: "Freedom Channel",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      url: "https://www.youtube.com/embed/VWfR9B1jZmw"
     },
     {
       id: 3,
