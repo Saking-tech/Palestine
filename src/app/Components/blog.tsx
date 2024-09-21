@@ -79,6 +79,7 @@ const BlogTypingSection = () => {
 
   return (
     <div className="min-h-screen bg-gray-900 flex-col justify-center flex items-center p-4">
+      <div className="w-full max-w-4xl bg-gray-800 text-white text-xg"><h1 className="text-[72px] text-center">From the River to the Sea</h1></div>
       <div className="w-full max-w-4xl bg-gray-800 text-white text-xg"><h1 className="text-[72px] text-center">Palestine will be Free</h1></div>
       <div className="w-full max-w-4xl bg-gray-800 items-center justify-center rounded-lg shadow-xl p-6 space-y-4">
         <div className="flex flex-wrap items-center justify-between space-y-2 sm:space-y-0">
