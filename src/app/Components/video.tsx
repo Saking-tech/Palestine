@@ -9,10 +9,10 @@ const LiberationVideo = () => {
   const videos = [
     {
       id: 1,
-      title: "The Path to Freedom",
+      title: "Live Palestina",
       date: "2023-06-15",
       source: "Liberation News",
-      url: "https://www.youtube.com/embed/eJWyzfJafmI" 
+      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     },
     {
       id: 2,
