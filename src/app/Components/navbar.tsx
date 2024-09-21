@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaFlagCheckered } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import logoImage from '../favicon.ico';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <FaFlagCheckered className="h-8 w-8 text-black" aria-label="Palestine Flag" />
+                <img src={logoImage as unknown as string} alt="Logo" className="h-8 w-8" />
               </div>
             </div>
             <div className="hidden md:block">
