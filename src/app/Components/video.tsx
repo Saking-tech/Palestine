@@ -12,7 +12,7 @@ const LiberationVideo = () => {
       title: "Live Palestina",
       date: "2023-06-15",
       source: "Liberation News",
-      url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      url: "https://www.youtube.com/embed/VWfR9B1jZmw",
     },
     {
       id: 2,
