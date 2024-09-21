@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logoImage from '../favicon.png';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +34,13 @@ const Navbar = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <img src={logoImage as unknown as string} alt="Logo" className="h-8 w-8" />
+              <Image
+                  src="../favicon.png" // Local path in the public directory
+                  alt="Logo"
+                  width={32} // Define the width (e.g., 32 pixels)
+                  height={32} // Define the height (e.g., 32 pixels)
+                  className="rounded-full" // You can still use className for additional styling
+                />
               </div>
             </div>
             <div className="hidden md:block">
