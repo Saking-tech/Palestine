@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Image from 'next/image';
+import ico from '../favicon.ico';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ const Navbar = () => {
             <div className="flex items-center">
               <div className="flex-shrink-0">
               <Image
-                  src="../favicon.png" // Local path in the public directory
+                  src={ico} // Local path in the public directory
                   alt="Logo"
                   width={32} // Define the width (e.g., 32 pixels)
                   height={32} // Define the height (e.g., 32 pixels)
@@ -60,7 +61,7 @@ const Navbar = () => {
               <button
                 onClick={toggleMenu}
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                className="inline-flex items-center justify-top p-2 rounded-md text-black hover:text-white hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
               >
