@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import Image from 'next/image';
 import ico from '../favicon.ico';
+import Home from '../Headers/home';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
